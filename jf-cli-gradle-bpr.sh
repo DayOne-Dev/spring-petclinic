@@ -15,6 +15,7 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 
 # Gradle 
+set -x # activate debugging from here
 ## Config - project
 ### CLI
 export BUILD_NAME="spring-petclinic" BUILD_ID="cmd.gdl.bpr.$(date '+%Y-%m-%d-%H-%M')"
@@ -69,4 +70,8 @@ echo "\n\n**** Query build ****\n\n"
 # jf rt curl "/api/build/spring-petclinic/cmd.gdl.bpr.2024-10-28-22-08"
 jf rt curl "/api/build/${BUILD_NAME}/${BUILD_ID}"
 
-echo "\n\n**** DONE ****\n\n"
+
+
+
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-GRADLE-BPR.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"

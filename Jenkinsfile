@@ -2,6 +2,7 @@ node {
     JKS_BUILD_NAME="spring-petclinic" 
     JKS_BUILD_ID="jks.${env.BUILD_ID}"
     dockerRegistryOrg="krishnamanchikalapudi"
+    pwd="helloPassword"
     environment { 
         softwareVersion()
     }

@@ -15,6 +15,7 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 
 # MVN 
+set -x # activate debugging from here
 ## Config - project
 ### CLI
 export BUILD_NAME="spring-petclinic" BUILD_ID="cmd.mvn.dkr.xray.$(date '+%Y-%m-%d-%H-%M')" 
@@ -60,7 +61,7 @@ jf docker push ${JF_HOST}/${RT_REPO_DOCKER_VIRTUAL}/${BUILD_NAME}:${BUILD_ID} --
 echo "\n\n**** Docker: build create ****"
 jf rt curl -XGET "/api/storage/${RT_REPO_DOCKER_VIRTUAL}/${BUILD_NAME}/${BUILD_ID}/list.manifest.json" -o "${DOCKER_MANIFEST}"
 
-imageSha256=`cat ${DOCKER_MANIFEST} | jq -r '.originalChecksums.sha256').trim()`
+imageSha256=`cat ${DOCKER_MANIFEST} | jq -r '.originalChecksums.sha256'.trim()`
 echo "imageSha256: ${imageSha256}"
 
 echo ${JF_HOST}/${RT_REPO_DOCKER_VIRTUAL}/${BUILD_NAME}:${BUILD_ID}@sha256:${imageSha256} > ${DOCKER_SPEC_BUILD_PUBLISH}
@@ -105,4 +106,6 @@ rm -rf ${DOCKER_MANIFEST}
 rm -rf ${DOCKER_SPEC_BUILD_PUBLISH}
 
 
-echo "\n\n**** DONE ****\n\n"
+
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-MVN-DOCKER-XRAY.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"

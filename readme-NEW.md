@@ -40,6 +40,8 @@ Note: This process with not deploy to the envionrmnet platform.
 | [GitHub Actions](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/frogbot-scan-repository.yml) | [FrogBot](https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot) for Security | [![Frogbot Scan and Fix](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/frogbot-scan-repository.yml/badge.svg)](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/frogbot-scan-repository.yml) |  | 
 | [GitHub Actions](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/jfcli-security.yml) | [JF-CLI](https://jfrog.com/getcli/) for Security | [![JFrog Security using JF-CLI](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/jfcli-security.yml/badge.svg)](https://github.com/DayOne-Dev/spring-petclinic/actions/workflows/jfcli-security.yml) |  | 
 | Shell Script | [JF-CLI](https://jfrog.com/getcli/) Security using Curation, Xray, and JAS | [jf-cli-security.sh](https://github.com/DayOne-Dev/spring-petclinic/blob/main/jf-cli-security.sh) | Not Yet | 
+| Coverity Scan | [Coverity Scan: spring-petclinic](https://scan.coverity.com/projects/spring-petclinic) | [![Coverity Scan: spring-petclinic](https://scan.coverity.com/projects/30985/badge.svg)](https://scan.coverity.com/projects/spring-petclinic) |  | 
+
 <!-- 
 | CI/CD | Description | Code | [youtube.com/@DayOneDev](https://youtube.com/@DayOneDev) |
 |    |    |    |    | 

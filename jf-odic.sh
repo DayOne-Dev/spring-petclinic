@@ -14,6 +14,8 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 echo "Access Token: $JF_ACCESS_TOKEN"
 
+set -x # activate debugging from here
+
 export PROVIDER_NAME='krishnam-github-org-all-repos' 
 
 # Get Config - ref: https://jfrog.com/help/r/jfrog-rest-apis/get-oidc-configuration
@@ -46,4 +48,6 @@ curl -sLS -H "Content-Type: application/json" -H "Authorization: Bearer ${JF_ACC
 
 
 
-echo "\n\n**** DONE ****\n\n"
+
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-OIDC.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"

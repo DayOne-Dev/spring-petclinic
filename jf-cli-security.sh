@@ -15,6 +15,7 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 
 # MVN 
+set -x # activate debugging from here
 ## Config - project
 ### CLI
 export BUILD_NAME="spring-petclinic" BUILD_ID="sec.$(date '+%Y-%m-%d-%H-%M')" 
@@ -57,4 +58,6 @@ jf bs ${BUILD_NAME} ${BUILD_ID} --rescan --extended-table --vuln --fail=false
 
 
 
-echo "\n\n**** DONE ****\n\n"
+
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-SECURITY.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"

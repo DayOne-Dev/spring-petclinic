@@ -15,6 +15,7 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 
 # MVN 
+set -x # activate debugging from here
 ## Config - project
 ### CLI
 export BUILD_NAME="spring-petclinic" BUILD_ID="cmd.mvn.xray.$(date '+%Y-%m-%d-%H-%M')" 
@@ -69,4 +70,6 @@ echo "\n\n**** Props: set ****\n\n"  # These properties were captured Artifacts 
 jf rt sp "env=demo;job=cmd;org=ps;team=arch;pack_cat=webapp;build=maven;ts=ts-${BUILD_ID}" --build="${BUILD_NAME}/${BUILD_ID}"
 
 
-echo "\n\n**** DONE ****\n\n"
+
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-MVN-XRAY.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"

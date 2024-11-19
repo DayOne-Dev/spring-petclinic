@@ -15,6 +15,7 @@ echo "JF_RT_URL: $JF_RT_URL \n JFROG_RT_USER: $JFROG_RT_USER \n JFROG_CLI_LOG_LE
 jf rt ping --url=${JF_RT_URL}/artifactory
 
 # Gradle 
+set -x # activate debugging from here
 ## Config - project
 ### CLI
 export BUILD_NAME="spring-petclinic" BUILD_ID="cmd.gdl.$(date '+%Y-%m-%d-%H-%M')"
@@ -58,4 +59,5 @@ jf rt sp "env=demo;org=ps;team=arch;pack_cat=webapp;build=gradle;ts=ts-${BUILD_I
 
 
 
-echo "\n\n**** DONE ****\n\n"
+set +x # stop debugging from here
+echo "\n\n**** JF-CLI-GRADLE.SH - DONE at $(date '+%Y-%m-%d-%H-%M') ****\n\n"
