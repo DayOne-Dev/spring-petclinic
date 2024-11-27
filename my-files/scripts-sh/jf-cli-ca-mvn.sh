@@ -1,6 +1,6 @@
 # SET meta-data to differentiate application category, such as application or internal-library
 # export PACKAGE_CATEGORIES=(WEBAPP, SERVICE, LIBRARY, BASEIMAGE)
-clear
+# clear
 # TOKEN SETUP
 # jf c add --user=krishnam --interactive=true --url=https://psazuse.jfrog.io --overwrite=true 
 
@@ -21,7 +21,7 @@ export BUILD_NAME="spring-petclinic" BUILD_ID="cmd.cur.mvn.$(date '+%Y-%m-%d-%H-
 
 set -x # activate debugging from here
 ## Curation
-jf ca --format=table
+jf audit . --extended-table
 
 
 ### Jenkins
