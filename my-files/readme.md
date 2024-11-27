@@ -1,8 +1,7 @@
 # Spring PetClinic Sample Application using JFrog CLI
 
 ## Prerequisites
-- Read and understand the PetClinic application original documentation: [ReadME.MD](readme-original.md)
-- Read and understand the PetClinic application jenkins pipeline documentation: [ReadME.MD](readme.md)
+- Read and understand the PetClinic application original documentation: [ReadME.MD](https://github.com/spring-projects/spring-petclinic/blob/main/README.md)
 
 ## Objective
 Develop a DevOps pipeline to automate tasks such as code compile, unit testing, creation of container, and upload of artifacts to a repository. This will streamline the software development process using JFrog CLI.
